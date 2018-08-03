@@ -42,8 +42,7 @@ global class OppTerrAssignDefaultLogicFilter implements TerritoryMgmt.Opportunit
             for(Opportunity opp: opportunities){
                Territory2Priority tp = accountMaxPriorityTerritory.get(opp.AccountId);
                // Assign highest priority territory if there is only 1.
-                if(tp != null) {
-                //&& (tp.moreTerritoriesAtPriority == false) && (tp.territory2Id != opp.Territory2Id)){
+                if(tp != null) && (tp.moreTerritoriesAtPriority == false) && (tp.territory2Id != opp.Territory2Id)){
                    OppIdTerritoryIdResult.put(opp.Id, tp.territory2Id);
                 }else{
                    OppIdTerritoryIdResult.put(opp.Id, null);
